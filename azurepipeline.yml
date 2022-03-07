@@ -18,7 +18,7 @@ variables:
   container: con
   tfstateFile: terraform.tfstate
   anyTfChanges: false
-  #TF_VAR_UPN: '$(User_First_name)$(User_last_name)@rajurauniyarkumaroutlook.onmicrosoft.com'
+  TF_VAR_UPN: '$(User_First_name).$(User_last_name)@rajurauniyarkumaroutlook.onmicrosoft.com'
 
 steps:
 
