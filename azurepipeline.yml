@@ -1,11 +1,11 @@
 parameters:
   - name: User_First_name
     displayName: "User First Name"
-    type: object
+    type: string
 
   - name: User_last_name
     displayName: "User Last Name"
-    type: object
+    type: string
 
 
 pool:
