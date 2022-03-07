@@ -1,3 +1,8 @@
+parameters:
+  - name: User_first_name
+    displayName: "User First Name"
+    type: object
+
 pool:
   vmImage: 'ubuntu-latest'
 
