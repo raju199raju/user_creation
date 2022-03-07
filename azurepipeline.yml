@@ -49,11 +49,11 @@ steps:
     # commandOptions: '-detailed-exitcode -out=tfplan'
     environmentServiceNameAzureRM: '$(subscription)'
 
-#- task: TerraformTaskV1@0
-#  displayName: terraform apply tfplan
-#  inputs:
-#    provider: 'azurerm'
-#    command: 'apply'
-#    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-#    commandOptions: 'tfplan'
-#    environmentServiceNameAzureRM: '$(subscription)'
+- task: TerraformTaskV1@0
+  displayName: terraform apply tfplan
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+    commandOptions: 'tfplan'
+    environmentServiceNameAzureRM: '$(subscription)'
