@@ -1,7 +1,12 @@
 parameters:
-  - name: User_first_name
+  - name: User_First_name
     displayName: "User First Name"
     type: object
+
+  - name: User_last_name
+    displayName: "User Last Name"
+    type: object
+
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -13,6 +18,7 @@ variables:
   container: con
   tfstateFile: terraform.tfstate
   anyTfChanges: false
+  user_principal_name: $(User_First_name)$(User_last_name)@cacloudsec.onmicrosoft.com
 
 steps:
 

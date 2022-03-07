@@ -1,7 +1,7 @@
 // create AAD user 
 
 resource "azuread_user" "example" {
-  user_principal_name = "testsample@cacloudsec.onmicrosoft.com"
+  user_principal_name = var.upn
   display_name        = "test"
   mail_nickname       = "jdoe"
   password            = "SecretP@sswd99!"
