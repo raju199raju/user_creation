@@ -45,7 +45,7 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-    commandOptions: '-input=false'
+    commandOptions: '-out=tfplan'
     # commandOptions: '-detailed-exitcode -out=tfplan'
     environmentServiceNameAzureRM: '$(subscription)'
 
