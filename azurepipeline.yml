@@ -18,7 +18,7 @@ variables:
   container: con
   tfstateFile: terraform.tfstate
   anyTfChanges: false
-  user_principal_name: $(User_First_name)$(User_last_name)@cacloudsec.onmicrosoft.com
+  TF_VAR_UPN: $(User_First_name)$(User_last_name)@cacloudsec.onmicrosoft.com
 
 steps:
 
@@ -45,7 +45,7 @@ steps:
     provider: 'azurerm'
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-    commandOptions: '-out=tfplan'
+    commandOptions: '-input=false'
     # commandOptions: '-detailed-exitcode -out=tfplan'
     environmentServiceNameAzureRM: '$(subscription)'
 
