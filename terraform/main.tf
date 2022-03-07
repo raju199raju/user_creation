@@ -21,5 +21,5 @@ resource "azuread_group" "example" {
 
 resource "azuread_group_member" "example" {
   group_object_id  = azuread_group.example.id
-  member_object_id = resource.azuread_user.example.id
+  member_object_id = azuread_user.example.id
 }
