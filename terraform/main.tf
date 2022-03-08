@@ -1,10 +1,10 @@
-// create AAD user 
+// Create AAD Group
 
-resource "azuread_user" "example" {
-  user_principal_name = var.UPN
-  display_name        = var.FULL_NAME
-  given_name          = var.FIRST_NAME
-  surname             = var.LAST_NAME
-  password            = "SecretP@sswd99!"
+data "azuread_client_config" "current" {}
+
+resource "azuread_group" "ad_group" {
+  display_name     = var.GROUP_NAME
+  description      = var.GROUP_DESCRIPTION
+  owners           = [data.azuread_client_config.current.object_id]
+  security_enabled = true
 }
-
