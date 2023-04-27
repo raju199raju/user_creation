@@ -13,9 +13,3 @@ resource "azuread_group" "ad_group" {
 
 data "azurerm_subscription" "primary" {
 }
-
-resource "azurerm_role_assignment" "example" {
-  scope                = data.azurerm_subscription.primary.id
-  role_definition_name = "Contributor"
-  principal_id         = azuread_group.ad_group.object_id
-}
